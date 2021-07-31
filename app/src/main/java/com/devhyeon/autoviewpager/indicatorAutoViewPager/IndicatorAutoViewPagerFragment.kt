@@ -1,4 +1,4 @@
-package com.devhyeon.autoviewpager.basicAutoViewPager
+package com.devhyeon.autoviewpager.indicatorAutoViewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,30 +8,21 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.devhyeon.autoviewpager.R
-import com.devhyeon.autoviewpager.databinding.FragmentAutoViewpagerBinding
-import com.google.android.material.tabs.TabLayoutMediator
+import com.devhyeon.autoviewpager.basicAutoViewPager.AUTO_TIME
+import com.devhyeon.autoviewpager.basicAutoViewPager.END_PAGE_INDEX
+import com.devhyeon.autoviewpager.basicAutoViewPager.START_PAGE_INDEX
+import com.devhyeon.autoviewpager.databinding.FragmentIndicatorAutoViewpagerBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-/**
- * <English>
- * Using Activity
- * Basic Auto ViewPager2 Fragment
- * NextPage after AUTO_TIME
- *
- * <한국어>
- * 액티비티에서 사용
- * 기본 ViewPager2 프래그먼트
- * AUTO_TIME 이후에 다음페이지로 이동합니다.
- * */
-class BasicAutoViewPagerFragment : Fragment() {
+class IndicatorAutoViewPagerFragment : Fragment() {
     //variable for DataBinding
-    private lateinit var _binding: FragmentAutoViewpagerBinding
+    private lateinit var _binding: FragmentIndicatorAutoViewpagerBinding
     private val binding get() = _binding
 
     //Using Log
     companion object {
-        private val TAG = "DevHyeon >>> " + BasicAutoViewPagerFragment::class.java.name
+        private val TAG = "DevHyeon >>> " + IndicatorAutoViewPagerFragment::class.java.name
     }
 
     /**
@@ -44,15 +35,13 @@ class BasicAutoViewPagerFragment : Fragment() {
     ): View {
         _binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_auto_viewpager, container, false
+            R.layout.fragment_indicator_auto_viewpager, container, false
         )
 
-        binding.viewPager.adapter = AutoViewPagerAdapter(this@BasicAutoViewPagerFragment)
-
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = (position + 1).toString()    //Tab Text
-//            tab.setIcon(R.drawable.ic_launcher_foreground)    //Tab Icon
-        }.attach()
+        //ViewPager Adapter set
+        binding.viewPager.adapter = IndicatorAutoViewPagerAdapter(this)
+        //Indicator set
+        binding.dotsIndicator.setViewPager2(binding.viewPager)
 
         return binding.root
     }
@@ -64,7 +53,6 @@ class BasicAutoViewPagerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         autoScrollViewPager()
     }
-
 
     /**
      * Move one PAGE for each AUTO_TIME.

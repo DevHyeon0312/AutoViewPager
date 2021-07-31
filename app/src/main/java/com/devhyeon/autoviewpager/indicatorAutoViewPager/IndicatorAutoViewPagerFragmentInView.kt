@@ -1,4 +1,4 @@
-package com.devhyeon.autoviewpager.basicAutoViewPager
+package com.devhyeon.autoviewpager.indicatorAutoViewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,23 +7,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.devhyeon.autoviewpager.R
-import com.devhyeon.autoviewpager.databinding.FragmentAutoViewpagerInviewBinding
+import com.devhyeon.autoviewpager.databinding.FragmentIndicatorAutoViewpagerInviewBinding
 
-/**
- * <English>
- * Each Fragment that ViewPager2 will show.
- *
- * <한국어>
- * 프래그먼트에서 사용
- * ViewPager2 에서 보여줄 각 Fragment 입니다.
- * */
-class BasicAutoViewPagerFragmentInView : Fragment() {
+class IndicatorAutoViewPagerFragmentInView : Fragment() {
     //variable for DataBinding
-    private lateinit var _binding: FragmentAutoViewpagerInviewBinding
+    private lateinit var _binding: FragmentIndicatorAutoViewpagerInviewBinding
     private val binding get() = _binding
 
     companion object {
-        private val TAG = "DevHyeon >>> " + BasicAutoViewPagerFragmentInView::class.java.name
+        private val TAG = "DevHyeon >>> " + IndicatorAutoViewPagerFragmentInView::class.java.name
     }
 
     override fun onCreateView(
@@ -33,7 +25,7 @@ class BasicAutoViewPagerFragmentInView : Fragment() {
     ): View {
         _binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_auto_viewpager_inview, container, false
+            R.layout.fragment_indicator_auto_viewpager_inview, container, false
         )
         return binding.root
     }
