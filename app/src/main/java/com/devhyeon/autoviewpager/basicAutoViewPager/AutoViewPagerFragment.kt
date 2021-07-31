@@ -1,4 +1,4 @@
-package com.devhyeon.autoviewpager
+package com.devhyeon.autoviewpager.basicAutoViewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.devhyeon.autoviewpager.R
 import com.devhyeon.autoviewpager.databinding.FragmentAutoViewpagerBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.delay
@@ -26,7 +27,8 @@ class AutoViewPagerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_auto_viewpager, container, false)
+        _binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_auto_viewpager, container, false)
         return binding.root
     }
 

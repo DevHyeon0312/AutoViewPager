@@ -2,6 +2,7 @@ package com.devhyeon.autoviewpager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.devhyeon.autoviewpager.basicAutoViewPager.AutoViewPagerFragment
 import com.devhyeon.autoviewpager.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

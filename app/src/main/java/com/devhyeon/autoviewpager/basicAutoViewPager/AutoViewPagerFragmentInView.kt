@@ -1,12 +1,12 @@
-package com.devhyeon.autoviewpager
+package com.devhyeon.autoviewpager.basicAutoViewPager
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.devhyeon.autoviewpager.R
 import com.devhyeon.autoviewpager.databinding.FragmentAutoViewpagerInviewBinding
 
 class AutoViewPagerFragmentInView : Fragment() {
@@ -22,7 +22,8 @@ class AutoViewPagerFragmentInView : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_auto_viewpager_inview, container, false)
+        _binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_auto_viewpager_inview, container, false)
         return binding.root
     }
 

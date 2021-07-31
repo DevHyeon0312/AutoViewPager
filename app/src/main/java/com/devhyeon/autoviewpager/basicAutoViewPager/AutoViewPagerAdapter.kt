@@ -1,4 +1,4 @@
-package com.devhyeon.autoviewpager
+package com.devhyeon.autoviewpager.basicAutoViewPager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
