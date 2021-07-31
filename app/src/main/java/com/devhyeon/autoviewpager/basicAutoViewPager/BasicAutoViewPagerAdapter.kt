@@ -7,14 +7,18 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 private const val ARG_OBJECT = "object"
 
 class AutoViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int = MAX_PAGE
 
     override fun createFragment(position: Int): Fragment {
-        val fragment = AutoViewPagerFragmentInView()
+        val fragment = BasicAutoViewPagerFragmentInView()
         fragment.arguments = Bundle().apply {
-            putInt(ARG_OBJECT, position + 1)
+            putInt(ARG_OBJECT, position.nextPosition())
         }
         return fragment
+    }
+
+    private fun Int.nextPosition(): Int {
+        return this + 1
     }
 
 }

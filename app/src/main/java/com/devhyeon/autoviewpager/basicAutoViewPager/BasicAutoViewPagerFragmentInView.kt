@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment
 import com.devhyeon.autoviewpager.R
 import com.devhyeon.autoviewpager.databinding.FragmentAutoViewpagerInviewBinding
 
-class AutoViewPagerFragmentInView : Fragment() {
+class BasicAutoViewPagerFragmentInView : Fragment() {
     private lateinit var _binding: FragmentAutoViewpagerInviewBinding
     private val binding get() = _binding
 
     companion object {
-        private val TAG = "DevHyeon >>> " + AutoViewPagerFragmentInView::class.java.name
+        private val TAG = "DevHyeon >>> " + BasicAutoViewPagerFragmentInView::class.java.name
     }
 
     override fun onCreateView(
@@ -22,8 +22,10 @@ class AutoViewPagerFragmentInView : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_auto_viewpager_inview, container, false)
+        _binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_auto_viewpager_inview, container, false
+        )
         return binding.root
     }
 

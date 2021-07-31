@@ -2,7 +2,7 @@ package com.devhyeon.autoviewpager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.devhyeon.autoviewpager.basicAutoViewPager.AutoViewPagerFragment
+import com.devhyeon.autoviewpager.basicAutoViewPager.BasicAutoViewPagerFragment
 import com.devhyeon.autoviewpager.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(_binding.root)
 
         supportFragmentManager.beginTransaction()
-            .add(_binding.frameLayout.id, AutoViewPagerFragment()).commit()
+            .add(_binding.frameLayout.id, BasicAutoViewPagerFragment()).commit()
     }
 }
