@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.devhyeon.autoviewpager.basicAutoViewPager.BasicAutoViewPagerFragment
 import com.devhyeon.autoviewpager.databinding.ActivityMainBinding
 import com.devhyeon.autoviewpager.indicatorAutoViewPager.IndicatorAutoViewPagerFragment
+import com.devhyeon.autoviewpager.infinityAutoViewPager.InfinityAutoViewPagerFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _binding: ActivityMainBinding
@@ -22,5 +23,10 @@ class MainActivity : AppCompatActivity() {
         //IndicatorAutoViewPager
         supportFragmentManager.beginTransaction()
             .add(binding.frameLayout2.id, IndicatorAutoViewPagerFragment()).commit()
+
+
+        //InfinityAutoViewPager
+        supportFragmentManager.beginTransaction()
+            .add(binding.frameLayout3.id, InfinityAutoViewPagerFragment()).commit()
     }
 }
