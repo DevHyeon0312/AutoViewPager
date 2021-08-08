@@ -8,9 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.devhyeon.autoviewpager.R
-import com.devhyeon.autoviewpager.basicAutoViewPager.AUTO_TIME
-import com.devhyeon.autoviewpager.basicAutoViewPager.END_PAGE_INDEX
-import com.devhyeon.autoviewpager.basicAutoViewPager.START_PAGE_INDEX
 import com.devhyeon.autoviewpager.databinding.FragmentIndicatorAutoViewpagerBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

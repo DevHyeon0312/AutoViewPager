@@ -4,7 +4,6 @@ package com.devhyeon.autoviewpager.indicatorAutoViewPager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.devhyeon.autoviewpager.basicAutoViewPager.MAX_PAGE
 
 private const val ARG_OBJECT = "object"
 
